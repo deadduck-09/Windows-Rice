@@ -24,6 +24,10 @@ All My .config file are dropped enjoy!!
 
 
 
+<img width="1365" height="767" alt="image" src="https://github.com/user-attachments/assets/2971b6bf-fc7d-4bb4-ac56-0e99e387ddbd" />
+
+
+
 <img width="1365" height="767" alt="Screenshot 2026-02-02 154444" src="https://github.com/user-attachments/assets/863a492d-3ec8-4e43-85c1-6aa7072c7dba" />
 
 
