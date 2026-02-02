@@ -11,6 +11,8 @@ Things I use:-
 - Cava (music bars)
 - I have a personal Catppuccin theme over the "Terminal" and my "Windows"
 - Besides that I use Spotify with Spicetigy (visualiser installed)
+- Brave Browser's customizations are done separately
+- Mouse Cursor is of "Hornet" from "Hollow Knight Silksong" 
 
 All My .config file are dropped enjoy!!
 
