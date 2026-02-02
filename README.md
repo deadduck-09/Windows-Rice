@@ -12,7 +12,7 @@ Things I use:-
 - I have a personal Catppuccin theme over the "Terminal" and my "Windows"
 - Besides that I use Spotify with Spicetigy (visualiser installed)
 - Brave Browser's customizations are done separately
-- Mouse Cursor is of "Hornet" from "Hollow Knight Silksong" 
+- Mouse Cursor is of "Hornet" from "Hollow Knight Silksong" (ss is linked at last)
 
 All My .config file are dropped enjoy!!
 
@@ -29,6 +29,9 @@ All My .config file are dropped enjoy!!
 
 
 <img width="1365" height="767" alt="Screenshot 2026-02-02 154444" src="https://github.com/user-attachments/assets/863a492d-3ec8-4e43-85c1-6aa7072c7dba" />
+
+
+<img width="516" height="461" alt="Screenshot 2026-01-31 153418" src="https://github.com/user-attachments/assets/d162a3d7-6d65-437d-b656-651d37c925b9" />
 
 
 
