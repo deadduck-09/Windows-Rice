@@ -1,6 +1,6 @@
 watch_stylesheet: true
 watch_config: true
-debug: false
+debug: true
 komorebi:
   start_command: "komorebic start --whkd"
   stop_command: "komorebic stop --whkd"
@@ -12,12 +12,12 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
+      center: true 
     blur_effect:
       enabled: true
-      acrylic: false
+      acrylic: true 
       dark_mode: true
-      round_corners: false
+      round_corners: true
       border_color: None
     window_flags:
       always_on_top: true
@@ -27,10 +27,10 @@ bars:
       width: "100%"
       height: 30
     padding:
-      top: 0 # 4 4 2 4
-      left: 0
-      bottom: 0
-      right: 0
+      top: 4 # 4 4 2 4
+      left: 4
+      bottom: 2
+      right: 4
     widgets:
       left:
         [
@@ -39,12 +39,12 @@ bars:
           "komorebi_active_layout",
         ]
       center:
-        ["clock",
+        [ "notifications",
+          "clock",
           "battery",
         ]
       right:
-        [
-          "cava",
+        [ "cava",
           "media",
           "volume",
           "wallpapers",
@@ -58,10 +58,10 @@ widgets:
       label: "<span>\udb80\udf5c</span>"
       menu_list:
       - { title: "Home", path: "~" }
-      - { title: "Downloads", path: "image: ${USERPROFILE}\Pictures\yasb\bg.png"}
-      - { title: "Documents", path: "image: ${USERPROFILE}\Pictures\yasb\bg.png"}
-      - { title: "Pictures", path: "image: ${USERPROFILE}\Pictures\yasb\bg.png"}
-      - { title: "Videos", path: "image: ${USERPROFILE}\Pictures\yasb\bg.png"}
+      - { title: "Downloads", path: "C:\\Users\\Hp\\Downloads"}
+      - { title: "Documents", path: "C:\\Users\\Hp\\OneDrive\\Documents"}
+      - { title: "Pictures", path: "C:\\Users\\Hp\\OneDrive\\Pictures"}
+      - { title: "Videos", path: "C:\\Users\\Hp\\OneDrive\\Videos"}
       system_menu: true
       power_menu: false
       blur: true
@@ -97,28 +97,6 @@ widgets:
         hide_empty_workspaces: false
         hide_if_offline: true
         animation: true
-  weather:
-    type: "yasb.weather.WeatherWidget"
-    options:
-      label: "<span>{icon}</span> {temp}"
-      label_alt: "<span>{icon}</span> {location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
-      api_key: 'EnterAPIKeyHere'
-      update_interval: 600 #Update interval in seconds, Min 600
-      hide_decimal: true
-      location: 'Irkutsk'
-      callbacks:
-        on_left: "toggle_label"
-      icons:
-        sunnyDay: "\udb81\udd99"
-        clearNight: "\udb81\udd99"
-        cloudyDay: "\udb81\udd99"
-        cloudyNight: "\udb81\udd99"
-        rainyDay: "\udb81\udd99"
-        rainyNight: "\udb81\udd99"
-        snowyIcyDay: "\udb81\udd99"
-        snowyIcyNight: "\udb81\udd99"
-        blizzardDay: "\udb81\udd99"
-        default: "\udb81\udd99" 
   media:
       type: "yasb.media.MediaWidget"
       options:
@@ -197,14 +175,14 @@ widgets:
       label: "<span>\udb83\ude09</span>"
       image_path: "C:\\Users\\Hp\\OneDrive\\Pictures\\Wallpaper"
       change_automatically: false
-      update_interval: 60
+      update_interval: 86400
       gallery:
         enabled: true
         blur: true
         image_width: 296
-        image_per_page: 6
-        show_buttons: true
-        orientation: "portrait"
+        image_per_page: 4
+        show_buttons: false 
+        orientation: "landscape"
         image_spacing: 10
         lazy_load: true
         lazy_load_delay: 10
@@ -296,7 +274,7 @@ widgets:
         round_corners_type: "normal"
         border_color: "System"
         alignment: "left"
-        direction: "down"
+        direction: "right"
         offset_top: 6
         offset_left: 0
         show_layout_icons: true
@@ -311,7 +289,7 @@ widgets:
       label: "<span>{icon}</span> {percent}%"
       label_alt: "<span>{icon}</span> {percent}% | {power}W | {time_remaining}"
       update_interval: 5000
-      time_remaining_natural: False
+      time_remaining_natural: true
       hide_unsupported: True
       charging_options:
         icon_format: "{charging_icon}"
@@ -335,5 +313,35 @@ widgets:
         color: "black"
         radius: 3
         offset: [ 1, 1 ]
-
-  
+  weather:
+    type: "yasb.weather.WeatherWidget"
+    options:
+      label: "<span>{icon}</span> {temp}"
+      label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+      api_key: "3bf4cf9a7c3f40d6b31174128242807" # Get your free API key from https://www.weatherapi.com/
+      show_alerts: true
+      tooltip: true
+      update_interval: 600 # Update interval in seconds, Min 600 seconds
+      hide_decimal: true
+      units: "metric" # Can be 'metric' or 'imperial'
+      location: "Aurangabad, IN," # You can use "USA Los Angeles 90006" {COUNTRY CITY ZIP_CODE}, or just city.
+      callbacks:
+        on_left: "toggle_card"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "<span>\uf476</span>"
+      label_alt: "notifications"
+      hide_empty: false
+      tooltip: false
+      callbacks:
+        on_left: "toggle_notification"
+        on_right: "do_nothing"
+        on_middle: "toggle_label"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 2
+        offset: [ 0 , 0 ]
